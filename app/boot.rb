@@ -16,7 +16,7 @@ get '/' do
     begin
       "A #{gender} is #{Gender.const_get(gender.upcase.to_sym)}"
     rescue NameError => e
-      "A #{gender} is sadly not recognised"
+      "A #{gender} is regrettably not recognised"
     end
   end.map do |thing|
     "<p>#{thing}</p>"
