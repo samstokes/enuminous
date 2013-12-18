@@ -12,5 +12,9 @@ class Gender < Enum
 end
 
 get '/' do
-  "A male is #{Gender::MALE}"
+  %w(male female).map do |gender|
+    "A #{gender} is #{Gender.const_get(gender.upcase.to_sym)}"
+  end.map do |thing|
+    "<p>#{thing}</p>"
+  end
 end
