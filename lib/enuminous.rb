@@ -19,7 +19,7 @@ class Enum
   end
 
   class << self
-    def validate!(val)
+    def alidate!(val)
       unless values.member? val.to_sym
         raise ArgumentError, "Invalid #{self}: #{val}"
       end
