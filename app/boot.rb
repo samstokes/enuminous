@@ -12,8 +12,12 @@ class Gender < Enum
 end
 
 get '/' do
-  %w(male female).map do |gender|
-    "A #{gender} is #{Gender.const_get(gender.upcase.to_sym)}"
+  %w(male female other).map do |gender|
+    begin
+      "A #{gender} is #{Gender.const_get(gender.upcase.to_sym)}"
+    rescue NameError => e
+      "A #{gender} is sadly not recognised"
+    end
   end.map do |thing|
     "<p>#{thing}</p>"
   end
