@@ -13,7 +13,7 @@ Enums that are checked
 
 
   gem.add_development_dependency 'rspec'
-
+  gem.add_development_dependency 'sinatra'
 
   gem.files = Dir[*%w(
       lib/**/*
